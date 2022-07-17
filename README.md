@@ -1,6 +1,8 @@
 ## Mind flaying aka MVPA `Multi Variate Pattern Analysis`
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/Prof-xavier.jpg)
 ---
+
+### Key notes
 - We are interested in **decoding over time** from *epochs x channels x time points* EEG data
 - This strategy consists in fitting a multivariate predictive model on each time instant and evaluating its performance at the same instant on new epochs
 - `X` is the epochs data of shape n_epochs × n_channels × n_times
@@ -8,11 +10,19 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 - We can retrieve the **spatial filters** and **spatial patterns** if we explicitly use a `LinearModel`
 - `get_coef` function can fetch the `patterns`. Make sure we do `inverse_transform=True`
 
-> Extraction filters of backward models may exhibit large weights at channels not at all picking up the signals of interest, as well as small weights at channels containing the signal.
-Such “misleading” weights are by no means indications of suboptimal model estimation.
+> Extraction filters of backward models may exhibit large weights at channels not at all picking up the signals of interest, as well as small weights at channels containing the signal
+
+Such “misleading” weights are by no means indications of suboptimal model estimation
+
 Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
 
+We derived a transformation by which extraction filters of any linear backward model can be turned into activation patterns of a corresponding forward model
+
+By this means, backward models can eventually be made interpretable
 ---
+
+### Temporal generalisation
+
 ### Trivia
 - Difference between `scikit-learn` and `mne.decoding.Scaler`
 

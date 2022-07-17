@@ -24,7 +24,7 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 - Evaluating whether the model estimated at a particular time instant accurately predicts any other time instant
 - It is analogous to transferring a trained model to a distinct learning problem, where the problems correspond to decoding the patterns of brain activity recorded at distinct time instants
 - The diagonal line in the plot below is exactly same as the time-by-time decoding plot
-![]()
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TemoralGeneralisation.png)
 
 ---
 

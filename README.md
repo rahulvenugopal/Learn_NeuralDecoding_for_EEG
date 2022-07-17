@@ -12,16 +12,21 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 
 > Extraction filters of backward models may exhibit large weights at channels not at all picking up the signals of interest, as well as small weights at channels containing the signal
 
-Such “misleading” weights are by no means indications of suboptimal model estimation
+> Such “misleading” weights are by no means indications of suboptimal model estimation
 
-Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
+> Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
 
-We derived a transformation by which extraction filters of any linear backward model can be turned into activation patterns of a corresponding forward model
+> We derived a transformation by which extraction filters of any linear backward model can be turned into activation patterns of a corresponding forward model. By this means, backward models can eventually be made interpretable
 
-By this means, backward models can eventually be made interpretable
 ---
 
-### Temporal generalisation
+### Temporal generalisation - n extension of the decoding over time approach
+- Evaluating whether the model estimated at a particular time instant accurately predicts any other time instant
+- It is analogous to transferring a trained model to a distinct learning problem, where the problems correspond to decoding the patterns of brain activity recorded at distinct time instants
+- The diagonal line in the plot below is exactly same as the time-by-time decoding plot
+![]()
+
+---
 
 ### Trivia
 - Difference between `scikit-learn` and `mne.decoding.Scaler`
@@ -42,7 +47,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 `liblinear` is limited to one-versus-rest schemes
 
 - **Crossvalidation**
-[](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
 
 - **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns instead of `filters` in `get_coef` function
 
@@ -51,4 +56,4 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 ---
 ### Resources and Inspirations
 1. [Decreasing alertness modulates perceptual decision-making](https://github.com/SridharJagannathan/decAlertnessDecisionmaking_JNeuroscience2021)
-2. [MNE demo from Richard Höchenberger's workshop]()
+2. [MNE demo from Richard Höchenberger's workshop](https://www.youtube.com/watch?v=t-twhNqgfSY)

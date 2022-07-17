@@ -18,16 +18,11 @@ from sklearn.pipeline import make_pipeline
 
 # mne decoding libraries
 import mne
-from mne.datasets import sample
 from mne.decoding import SlidingEstimator, LinearModel, cross_val_multiscore,  get_coef, GeneralizingEstimator
 
 #%% Load epochs*channels*timepoints
 
-data_path = sample.data_path()
-
-subjects_dir = data_path / 'subjects'
-meg_path = data_path / 'MEG' / 'sample'
-raw_fname = meg_path / 'sample_audvis_filt-0-40_raw.fif'
+raw_fname = 'sample_audvis_filt-0-40_raw.fif'
 tmin, tmax = -0.200, 0.500
 event_id = {'Auditory/Left': 1, 'Visual/Left': 3}  # just use two
 raw = mne.io.read_raw_fif(raw_fname)
@@ -44,39 +39,26 @@ events = mne.find_events(raw, 'STI 014')
 raw.info['bads'] += ['MEG 2443']  # bads + 2 more
 
 # Read epochs
-epochs = mne.Epochs(raw, events, event_id, tmin, tmax, proj=True,
-                    picks=('grad', 'eog'), baseline=(None, 0.), preload=True,
-                    reject=dict(grad=4000e-13, eog=150e-6), decim=3,
+epochs = mne.Epochs(raw, events, event_id,
+                    tmin, tmax,
+                    proj=True,
+                    picks=('grad', 'eog'),
+                    baseline=(None, 0.), preload=True,
+                    reject=dict(grad=4000e-13,
+                                eog=150e-6),
+                    decim=3,
                     verbose='error')
+
 epochs.pick_types(meg=True, exclude='bads')  # remove stim and EOG
 del raw
 
 # To keep chance level at 50% accuracy, we first equalize the number of epochs in each condition
-
 epochs.equalize_event_counts(epochs.event_id)
 epochs
 
 # Extracting data and labels
 X = epochs.get_data()  # MEG signals: n_epochs, n_meg_channels, n_times
 y = epochs.events[:, 2]  # target: auditory left vs visual left
-
-#%% Equalize the number of epochs
-
-
-'''
-Create input x and response y.
-
-A classifier takes as input a matrix X and returns a vector y (consisting of 0 and 1).
-
-Here X will be the data at one time point on all gradiometers (hence the term multivariate).
-
-We want to train our model to discriminate between the Auditory/Left and the Auditory/Right trials.
-
-We work with all sensors jointly and try to find a discriminative pattern between the two conditions
-to predict the experimental condition of individual trials.
-
-For classification we will use the scikit-learn package (http://scikit-learn.org/) and MNE-Python functions.
-'''
 
 #%% We can do this more simply using the mne.decoding module! Let's go. 🚀
 '''
@@ -92,7 +74,7 @@ We can try to answer this question by fitting a classifier at every single time 
 
 # Classifier pipeline. No need for vectorization as in the previous example.
 clf = make_pipeline(StandardScaler(),
-                    LogisticRegression(max_iter=1000))
+                    LinearModel(LogisticRegression(max_iter=1000)))
 
 # The "sliding estimator" will train the classifier at each time point.
 scoring = 'roc_auc'

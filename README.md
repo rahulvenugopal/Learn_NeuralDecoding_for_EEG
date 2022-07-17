@@ -12,6 +12,7 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 - Extraction filters of backward models may exhibit large weights at channels not at all picking up the signalsof-interest, as well as small weights at channels containing the signal
 - Such “misleading” weights are by no means indications of suboptimal model estimation
 - Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
+
 {% endnote %}
 
 ---

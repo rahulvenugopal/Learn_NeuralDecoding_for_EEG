@@ -5,6 +5,15 @@
 - This strategy consists in fitting a multivariate predictive model on each time instant and evaluating its performance at the same instant on new epochs
 - `X` is the epochs data of shape n_epochs × n_channels × n_times
 As the last dimension of `X` is the time, an estimator will be fit on every time instant
+- We can retrieve the **spatial filters** and **spatial patterns** if we explicitly use a `LinearModel`
+- `get_coef` function can fetch the `patterns`. Make sure we do `inverse_transform=True`
+
+{% note %}
+- Extraction filters of backward models may exhibit large weights at channels not at all picking up the signalsof-interest, as well as small weights at channels containing the signal
+- Such “misleading” weights are by no means indications of suboptimal model estimation
+- Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
+{% endnote %}
+
 ---
 ### Trivia
 - Difference between `scikit-learn` and `mne.decoding.Scaler`
@@ -26,6 +35,9 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 
 - **Crossvalidation**
 [](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
+
+- **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns instead of `filters` in `get_coef` function
+
 
 
 ---

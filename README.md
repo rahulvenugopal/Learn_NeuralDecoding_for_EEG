@@ -8,11 +8,9 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 - We can retrieve the **spatial filters** and **spatial patterns** if we explicitly use a `LinearModel`
 - `get_coef` function can fetch the `patterns`. Make sure we do `inverse_transform=True`
 
->
-- Extraction filters of backward models may exhibit large weights at channels not at all picking up the signalsof-interest, as well as small weights at channels containing the signal
-- Such “misleading” weights are by no means indications of suboptimal model estimation
-- Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
-
+> Extraction filters of backward models may exhibit large weights at channels not at all picking up the signalsof-interest, as well as small weights at channels containing the signal
+Such “misleading” weights are by no means indications of suboptimal model estimation
+Rather, they are needed to “filter away” noise and thereby to extract the signal with high SNR
 
 ---
 ### Trivia

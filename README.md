@@ -45,12 +45,17 @@ Lookup the **LogisticRegression** solvers documentation. `liblinear` is faster t
 `sag` and `saga` are faster for larger datasets
 For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle multinomial loss
 `liblinear` is limited to one-versus-rest schemes
+- [Logistic regression python solvers' definitions](https://stackoverflow.com/questions/38640109/logistic-regression-python-solvers-definitions)
 
 - **Crossvalidation**
 
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
 
 - **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns` instead of `filters` in `get_coef` function makes more sense
+
+- Normally when an optimization algorithm **does not** converge, it is usually because training data is not normalised
+- Set `max_iter` to a larger value
+---
 
 ### Points to ponder
 - Shuffling the dataset

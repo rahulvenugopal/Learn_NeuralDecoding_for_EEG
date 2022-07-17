@@ -50,9 +50,15 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
 
-- **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns instead of `filters` in `get_coef` function
+- **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns` instead of `filters` in `get_coef` function makes more sense
 
-
+### Points to ponder
+- Shuffling the dataset
+- StratifiedKFold
+- Using features instead of time series
+- I think the limitations are from the kind of features that can be computed on a single time point!
+- `F1 scores` vs `roc_auc`
+- About balancing the classes
 
 ---
 ### Resources and Inspirations

@@ -20,7 +20,7 @@ As the last dimension of `X` is the time, an estimator will be fit on every time
 
 ---
 
-### Temporal generalisation - n extension of the decoding over time approach
+### Temporal generalisation - an extension of the decoding over time approach
 - Evaluating whether the model estimated at a particular time instant accurately predicts any other time instant
 - It is analogous to transferring a trained model to a distinct learning problem, where the problems correspond to decoding the patterns of brain activity recorded at distinct time instants
 - The diagonal line in the plot below is exactly same as the time-by-time decoding plot
@@ -47,6 +47,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 `liblinear` is limited to one-versus-rest schemes
 
 - **Crossvalidation**
+
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/CrossValidation.png)
 
 - **On the interpretation of weight vectors of linear models in multivariate neuroimaging** is an awesome paper which explains why `patterns instead of `filters` in `get_coef` function

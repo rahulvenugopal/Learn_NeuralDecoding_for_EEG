@@ -69,3 +69,25 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 ### Resources and Inspirations
 1. [Decreasing alertness modulates perceptual decision-making](https://github.com/SridharJagannathan/decAlertnessDecisionmaking_JNeuroscience2021)
 2. [MNE demo from Richard Höchenberger's workshop](https://www.youtube.com/watch?v=t-twhNqgfSY)
+
+---
+# [spatio_temporal_cluster_test](https://mne.tools/stable/generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test) in `mne-python`
+- The data **X** should be of the form observations*time*channels
+- All dimensions except the first should match across all groups
+- The threshold has to be a dictionary for TFCE method
+- To understand what the hell is `TFCE` read up the awesome blogposts from Benedikt Ehinger's blog (checkout resources)
+- tail `0` is two tailed test
+- provide adjacency info so that `TFCE` knows the neighboring channels
+- `t_power` will count locations or weigh each location by its statistical score
+
+### Motivation for TFCE
+- Threshold might miss broad but `weak` clusters, and focus only on `strong` but peaky clusters
+- The intuition of TFCE is that we are going to try out all possible thresholds and see whether a given time-point belongs to a significant cluster under any of our set of cluster-thresholds
+- TFCE will be a weighted average between the cluster extend and cluster height
+- i.e how many extended samples and how large the t value is / the evidence for an effect
+
+### Resources
+1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)
+2.[Statistics: Cluster Permutation Test](https://benediktehinger.de/blog/science/statistics-cluster-permutation-test/)
+
+*Read this [post](https://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test/) before writing TFCE results*

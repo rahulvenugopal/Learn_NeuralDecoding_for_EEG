@@ -87,8 +87,12 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 - i.e how many extended samples and how large the t value is / the evidence for an effect
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
 
+### Result images looks like below
+![]()
+
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)
 2.[Statistics: Cluster Permutation Test](https://benediktehinger.de/blog/science/statistics-cluster-permutation-test/)
+3. [Know your neighbours when calculating how channels are connected spatially](https://www.fieldtriptoolbox.org/faq/how_does_ft_prepare_neighbours_work/)
 
 *Read this [post](https://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test/) before writing TFCE results*

@@ -88,7 +88,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
 
 ### Result images looks like below
-![]()
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_output.png)
 
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)

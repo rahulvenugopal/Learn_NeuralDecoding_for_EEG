@@ -85,6 +85,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 - The intuition of TFCE is that we are going to try out all possible thresholds and see whether a given time-point belongs to a significant cluster under any of our set of cluster-thresholds
 - TFCE will be a weighted average between the cluster extend and cluster height
 - i.e how many extended samples and how large the t value is / the evidence for an effect
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
 
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)

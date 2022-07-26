@@ -79,6 +79,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 - tail `0` is two tailed test
 - provide adjacency info so that `TFCE` knows the neighboring channels
 - `t_power` will count locations or weigh each location by its statistical score
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/Cluster%20statistics%20_220726_092943_1.jpg)
 
 ### Motivation for TFCE
 - Threshold might miss broad but `weak` clusters, and focus only on `strong` but peaky clusters

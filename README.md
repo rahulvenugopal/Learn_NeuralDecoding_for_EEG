@@ -93,7 +93,9 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)
-2.[Statistics: Cluster Permutation Test](https://benediktehinger.de/blog/science/statistics-cluster-permutation-test/)
+2. [Statistics: Cluster Permutation Test](https://benediktehinger.de/blog/science/statistics-cluster-permutation-test/)
 3. [Know your neighbours when calculating how channels are connected spatially](https://www.fieldtriptoolbox.org/faq/how_does_ft_prepare_neighbours_work/)
+4. [Cluster-based multiple comparisons correction |Mike X Cohen](https://www.youtube.com/watch?v=51y6OAGeS2Q)
+5. [Extreme pixel-based multiple comparisons correction |Mike X Cohen](https://www.youtube.com/watch?v=fAYFtpKwJRQ&list=PLn0OLiymPak1Ch2ce47MqwpIw0x3m6iZ7&index=6)
 
 *Read this [post](https://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test/) before writing TFCE results*

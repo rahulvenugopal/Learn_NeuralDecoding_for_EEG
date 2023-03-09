@@ -109,6 +109,10 @@ Changing it to tfce will make things take a lot longer but should be more accura
 
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/Cluster%20statistics%20_220726_092943_1.jpg)
 
+### Detailed drill down
+- [cluster_level script has all the functions](https://github.com/mne-tools/mne-python/blob/bf2502166eb15626c1205accc2d2d467535b8d93/mne/stats/cluster_level.py#L832)
+- Goal is to track the data `X` which is a list of length two (groups/conditions), the parameters (for tfce, start and step) and the output (T_obs, clusters, cluster_p_values, H0). Understanding how these are computed and intuitions
+
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)
 2. [Statistics: Cluster Permutation Test](https://benediktehinger.de/blog/science/statistics-cluster-permutation-test/)

@@ -80,11 +80,17 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 - Read [this](https://github.com/mne-tools/mne-python/issues/5534) discussion to understand the **accuracy-speed** tradeoffs
 - In short, `tfce` parameters are data dependent. The tricky thing is to figure out the speed/accuracy tradeoff and how to make it. See the quote below
 
-> Yes but this is not the only consideration. There is a speed/accuracy tradeoff, and it's not obvious how to make it. To make things completely reliable/accurate we could set the start to zero and the step to be some tiny number, but this operation will essentially run forever. The other extreme is essentially what we do now, which is probably equivalent (I'd need to think about it) to using TFCE with start=threshold, step=np.inf, which is guaranteed to complete in a small amount of time (one clustering iter) but not be so accurate. So in this sense, what we do now is well defined essentially as the "guaranteed fast but not so great approximation".
-
-In between these two there are approximations that probably make good tradeoffs between accuracy and speed. Robustly choosing a good one is not necessarily an easy problem, though, because it depends on the data. Maybe using something like starting at the 10th percentile and going in increments relative to the difference between the 90th and 10th percentiles would work in 90% of cases...?
-
-If you are motivated to extensively test these tradeoffs and can find one that works in such a high percentage of cases, then it could make sense to use as an automated threshold='tfce'. As for changing this to the default value for threshold, thinking about it more I'm actually not opposed to it. I imagine the vast majority of people override the threshold value already in their analyses. Changing it to tfce will make things take a lot longer but should be more accurate.
+> Yes but this is not the only consideration. There is a speed/accuracy tradeoff, and it's not obvious how to make it.
+To make things completely reliable/accurate we could set the start to zero and the step to be some tiny number, but this operation will essentially run forever.
+The other extreme is essentially what we do now, which is probably equivalent (I'd need to think about it) to using TFCE with start=threshold, step=np.inf, which is guaranteed to complete in a small amount of time (one clustering iter) but not be so accurate.
+So in this sense, what we do now is well defined essentially as the "guaranteed fast but not so great approximation".
+In between these two there are approximations that probably make good tradeoffs between accuracy and speed.
+Robustly choosing a good one is not necessarily an easy problem, though, because it depends on the data.
+Maybe using something like starting at the 10th percentile and going in increments relative to the difference between the 90th and 10th percentiles would work in 90% of cases...?
+If you are motivated to extensively test these tradeoffs and can find one that works in such a high percentage of cases, then it could make sense to use as an automated threshold='tfce'.
+As for changing this to the default value for threshold, thinking about it more I'm actually not opposed to it.
+I imagine the vast majority of people override the threshold value already in their analyses.
+Changing it to tfce will make things take a lot longer but should be more accurate.
 
 - To understand what the heck is `TFCE` read up the awesome blogposts from Benedikt Ehinger's blog (checkout resources)
 - tail `0` is two tailed test

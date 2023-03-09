@@ -71,7 +71,17 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 2. [MNE demo from Richard Höchenberger's workshop](https://www.youtube.com/watch?v=t-twhNqgfSY)
 
 ---
-# [spatio_temporal_cluster_test](https://mne.tools/stable/generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test) in `mne-python`
+# Motivation for TFCE
+- Threshold might miss broad but `weak` clusters, and focus only on `strong` but peaky clusters
+- The intuition of TFCE is that we are going to try out all possible thresholds and see whether a given time-point belongs to a significant cluster under any of our set of cluster-thresholds
+- TFCE will be a weighted average between the cluster extend and cluster height
+- i.e how many extended samples and how large the t value is / the evidence for an effect
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
+
+### Result images looks like below
+![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_output.png)
+
+### [spatio_temporal_cluster_test](https://mne.tools/stable/generated/mne.stats.spatio_temporal_cluster_test.html#mne.stats.spatio_temporal_cluster_test) in `mne-python`
 - The data **X** should be of the form *observations x time x channels*
 - All dimensions except the first (no of observations/subjects) should match across all groups
 - The threshold has to be a dictionary for TFCE method
@@ -96,17 +106,8 @@ Changing it to tfce will make things take a lot longer but should be more accura
 - tail `0` is two tailed test
 - provide adjacency info so that `TFCE` knows the neighboring channels
 - `t_power` will count locations or weigh each location by its statistical score
+
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/Cluster%20statistics%20_220726_092943_1.jpg)
-
-### Motivation for TFCE
-- Threshold might miss broad but `weak` clusters, and focus only on `strong` but peaky clusters
-- The intuition of TFCE is that we are going to try out all possible thresholds and see whether a given time-point belongs to a significant cluster under any of our set of cluster-thresholds
-- TFCE will be a weighted average between the cluster extend and cluster height
-- i.e how many extended samples and how large the t value is / the evidence for an effect
-![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
-
-### Result images looks like below
-![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_output.png)
 
 ### Resources
 1. [Threshold Free Cluster Enhancement explained](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/)

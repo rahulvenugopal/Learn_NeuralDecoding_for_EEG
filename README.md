@@ -115,5 +115,7 @@ Changing it to tfce will make things take a lot longer but should be more accura
 3. [Know your neighbours when calculating how channels are connected spatially](https://www.fieldtriptoolbox.org/faq/how_does_ft_prepare_neighbours_work/)
 4. [Cluster-based multiple comparisons correction |Mike X Cohen](https://www.youtube.com/watch?v=51y6OAGeS2Q)
 5. [Extreme pixel-based multiple comparisons correction |Mike X Cohen](https://www.youtube.com/watch?v=fAYFtpKwJRQ&list=PLn0OLiymPak1Ch2ce47MqwpIw0x3m6iZ7&index=6)
+6. [Correcting for multiple comparisons with cluster-based permutation](https://www.youtube.com/watch?v=Dx143jsZDIs&list=PLiIiytU7ZWCak7VmAQefTK0luhNCIOSaz&index=14)
+7. [Brief paper overview: Threshold free cluster enhancement](https://www.youtube.com/watch?v=q7cWw8WC0Ws)
 
 *Read this [post](https://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test/) before writing TFCE results*

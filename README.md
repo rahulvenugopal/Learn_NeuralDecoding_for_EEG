@@ -77,7 +77,7 @@ For multiclass problems, only `newton-cg`, `sag`, `saga` and `lbfgs` handle mult
 - TFCE will be a weighted average between the cluster extend and cluster height
 - i.e how many extended samples and how large the t value is / the evidence for an effect
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_intuition.png)
-
+TFCE schmeatic, [adapted](https://benediktehinger.de/blog/science/threshold-free-cluster-enhancement-explained/) from Benedikt V. Ehinger (used under CC-BY)
 ### Result images looks like below
 ![](https://github.com/rahulvenugopal/Learn_NeuralDecoding_for_EEG/blob/main/images/TFCE_output.png)
 

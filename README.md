@@ -130,3 +130,6 @@ Changing it to tfce will make things take a lot longer but should be more accura
 7. [Brief paper overview: Threshold free cluster enhancement](https://www.youtube.com/watch?v=q7cWw8WC0Ws)
 
 *Read this [post](https://www.fieldtriptoolbox.org/faq/how_not_to_interpret_results_from_a_cluster-based_permutation_test/) before writing TFCE results*
+
+### All-resolutions Inference for M/EEG in Python
+1. [Readme](https://github.com/john-veillette/mne-ari)
